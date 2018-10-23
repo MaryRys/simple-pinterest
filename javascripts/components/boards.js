@@ -1,4 +1,5 @@
 import {loadBoards} from '../data/boardsData.js';
+import {initialPinsView} from './pins.js';
 
 
 const bindEvents = () => {
@@ -9,7 +10,7 @@ const bindEvents = () => {
         $('#boards-page').hide();
         // shows pins-page div
         $('#pins-page').show();
-        console.log(clickecdBoardId);
+        initialPinsView(clickecdBoardId);
     });
 }
 
