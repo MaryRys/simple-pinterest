@@ -6,6 +6,13 @@ const shortenLink = (full_url) => {
     return hostname;
 }
 
+const bindEvents = () => {
+    $('#toBoardsBtn').click(() => {
+        $('#pinsPage').hide();
+        $('#boards-page').show();
+    })
+}
+
 const writePins = (pins) => {
     let domString = '';
     pins.forEach(pin => {
@@ -27,6 +34,7 @@ const initialPinsView = (boardId) => {
     // gets 'data' info
     .then(data => {
         writePins(data);
+        bindEvents();
     })
     .catch(error => {
         console.error('things messed up in pins', error);
